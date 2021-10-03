@@ -7,8 +7,6 @@ public class GunCircleRotate : MonoBehaviour
     Vector3 aimLocation;    // This is the aim location. 
     [SerializeField]
     Rigidbody2D bulletObject;
-    [SerializeField]
-    private MouseFollower mouse;
     // Bullet force
     public int bulletStronk = 1000;
     [SerializeField]

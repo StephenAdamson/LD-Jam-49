@@ -28,6 +28,19 @@ public class EnemyMovement : MonoBehaviour
     {
         float dist = distanceCalc(transform.position, target.position);
         //Debug.Log(dist.ToString());
+        float angleToTarget = angleFinder(transform.position, target.position);
+        Debug.Log(angleToTarget);
+        if (angleToTarget > 10)
+        {
+            //Debug.Log("JUMP");
+            jump = true;
+        }
+        else
+        {
+            //Debug.Log("NO JUMP");
+            jump = false;
+        }
+        //Debug.Log(dist.ToString());
 
         if (dist > targetRange)
         {
@@ -66,5 +79,14 @@ public class EnemyMovement : MonoBehaviour
     float distanceCalc(Vector2 A, Vector2 B)
     {
         return Vector3.Distance(A, B);
+    }
+
+    private float angleFinder(Vector3 entity, Vector3 aim)
+    {
+        float deltaX = aim.x - entity.x;
+        float deltaY = aim.y - entity.y;
+        float radians = Mathf.Atan2(deltaY, deltaX);
+        float degrees = radians * Mathf.Rad2Deg;
+        return degrees;
     }
 }

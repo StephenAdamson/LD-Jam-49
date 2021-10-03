@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour {
     }
 
     public void StartGame() {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("test1");
     }
 
     public void Quit() {
