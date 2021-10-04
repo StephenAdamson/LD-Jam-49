@@ -63,7 +63,6 @@ public class Gun_AI : MonoBehaviour
             frameCounter = initFrameCounterValue;
         }
         frameCounter--;
-        Debug.Log(frameCounter);
     }
 
     private float angleFinder(Vector3 entity, Vector3 aim)

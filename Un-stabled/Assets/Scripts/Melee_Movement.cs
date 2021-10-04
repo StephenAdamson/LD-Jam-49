@@ -31,7 +31,6 @@ public class Melee_Movement : MonoBehaviour
     void Update()
     {
         float dist = distanceCalc(transform.position, target.position);
-        Debug.Log(dist.ToString());
         float angleToTarget = angleFinder(transform.position, target.position);
 
 

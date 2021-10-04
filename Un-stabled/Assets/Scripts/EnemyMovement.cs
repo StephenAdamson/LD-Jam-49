@@ -29,7 +29,6 @@ public class EnemyMovement : MonoBehaviour
         float dist = distanceCalc(transform.position, target.position);
         //Debug.Log(dist.ToString());
         float angleToTarget = angleFinder(transform.position, target.position);
-        Debug.Log(angleToTarget);
         if (angleToTarget > 10)
         {
             //Debug.Log("JUMP");
@@ -71,8 +70,13 @@ public class EnemyMovement : MonoBehaviour
 
     // FixedUpdate is called once per tick
     void FixedUpdate() {
-        animator.SetBool("walking",Mathf.Abs(horizontalMove)>0.01f);
         controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
+        try
+        {
+            animator.SetBool("walking", Mathf.Abs(horizontalMove) > 0.01f);
+        }catch{
+            
+        }
     }
 
 

@@ -6,7 +6,7 @@ public class GunCircleRotate : MonoBehaviour
 {
     Vector3 aimLocation;    // This is the aim location. 
     [SerializeField]
-    Rigidbody2D bulletObject;
+    GameObject bulletObject;
     // Bullet force
     public int bulletStronk = 1000;
     [SerializeField]
@@ -44,13 +44,13 @@ public class GunCircleRotate : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            Rigidbody2D bullet = Instantiate(bulletObject);
+            GameObject bullet = Instantiate(bulletObject);
             bullet.GetComponent<ProjectileBehavior>().isPlayer = owner.gameObject.layer == 6;
             //Black magic
             Vector3 direction = (Vector2)(Quaternion.Euler(0, 0, angle) * Vector2.right);
             //EOBlack magic
-            bullet.AddForce(direction * bulletStronk);
             bullet.transform.position = bulletFirePoint.position;
+            bullet.GetComponent<Rigidbody2D>().AddForce(direction * bulletStronk);
             bullet.transform.rotation = Quaternion.Euler(0, 0, angle);
         }
     }

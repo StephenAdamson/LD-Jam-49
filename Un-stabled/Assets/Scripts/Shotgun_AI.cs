@@ -70,7 +70,6 @@ public class Shotgun_AI : MonoBehaviour
             }
         }
         frameCounter--;
-        Debug.Log(frameCounter);
     }
 
     private float angleFinder(Vector3 entity, Vector3 aim)
