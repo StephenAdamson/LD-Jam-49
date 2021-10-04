@@ -11,7 +11,7 @@ public class playerStateHandler : MonoBehaviour
     [SerializeField]
     ParticleSystem bloodPrefab;
 
-    int lastHealth;
+    float lastHealth;
 
 
 
