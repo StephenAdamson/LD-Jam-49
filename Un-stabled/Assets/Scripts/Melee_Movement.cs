@@ -21,6 +21,9 @@ public class Melee_Movement : MonoBehaviour
 
     public bool beegSmack = false;
 
+    [SerializeField]
+    private int counter = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,18 +58,22 @@ public class Melee_Movement : MonoBehaviour
         }
         else if (dist < 2.5)
         {
-            // Close Range
-            if (beegSmack)
+            if (counter > 60)
             {
-                //Debug.Log("UNWHACK");
-                weapon.rotation *= Quaternion.Euler(0, 0, angle);
-                beegSmack = false;
-            }
-            else
-            {
-                weapon.rotation *= Quaternion.Euler(0, 0, (angle*-1));
-                //Debug.Log("WHACK");
-                beegSmack = true;
+                // Close Range
+                if (beegSmack)
+                {
+                    //Debug.Log("UNWHACK");
+                    weapon.rotation *= Quaternion.Euler(0, 0, (angle*-1));
+                    beegSmack = false;
+                }
+                else
+                {
+                    weapon.rotation *= Quaternion.Euler(0, 0, angle);
+                    //Debug.Log("WHACK");
+                    beegSmack = true;
+                }
+                counter = 0;
             }
         }
         else
@@ -74,6 +81,7 @@ public class Melee_Movement : MonoBehaviour
             // Middle Range
             //horizontalMove = 0;
         }
+        counter++;
     }
 
     // FixedUpdate is called once per tick
