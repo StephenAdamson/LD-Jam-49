@@ -14,7 +14,7 @@ public class enemyRangedAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        target = GetComponent<EnemyMovement>().target;
+        target = GameManager.Instance.getPlayer().transform;
     }
 
     // Update is called once per frame
