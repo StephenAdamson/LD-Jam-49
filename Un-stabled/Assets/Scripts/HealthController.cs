@@ -33,6 +33,12 @@ public class HealthController : MonoBehaviour
     {
         current = startHealth;
         max = startMax;
+        if(gameObject.name == "player" || gameObject.name == "player(Clone)"){
+            Debug.Log("healthbar attempt");
+            HealthBar hb = GameObject.FindObjectOfType<Canvas>().GetComponentInChildren<HealthBar>();
+            healthBar = hb;
+            Debug.Log(healthBar);
+        }
     }
 
     // Update is called once per frame

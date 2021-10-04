@@ -7651,9 +7651,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 658645489}
     m_Modifications:
+    - target: {fileID: 603337538772444870, guid: 8407aa6acd03c2d44a0fca08eea044f3, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 5905339118539276723, guid: 8407aa6acd03c2d44a0fca08eea044f3, type: 3}
       propertyPath: m_Name
       value: HealthBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 6068546668531792071, guid: 8407aa6acd03c2d44a0fca08eea044f3, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 7373037814941614409, guid: 8407aa6acd03c2d44a0fca08eea044f3, type: 3}
       propertyPath: m_Pivot.x
@@ -7738,6 +7746,10 @@ PrefabInstance:
     - target: {fileID: 7373037814941614409, guid: 8407aa6acd03c2d44a0fca08eea044f3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8962352988211262548, guid: 8407aa6acd03c2d44a0fca08eea044f3, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8407aa6acd03c2d44a0fca08eea044f3, type: 3}
