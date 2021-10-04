@@ -9,6 +9,7 @@ public class LevelManager : MonoBehaviour
     public GameObject ActivePlayer;
     [SerializeField]
     GameObject playerPrefab;
+    public SpriteRenderer rageVignette;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,7 @@ public class LevelManager : MonoBehaviour
             ActivePlayer.transform.position = GameObject.FindGameObjectsWithTag("Respawn")[0].transform.position;
         }
         Camera.main.gameObject.GetComponentInChildren<CinemachineVirtualCamera>().Follow = ActivePlayer.transform;
+        rageVignette = Camera.main.gameObject.GetComponentsInChildren<SpriteRenderer>()[1];
     }
 
 

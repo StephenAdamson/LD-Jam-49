@@ -7,6 +7,12 @@ public class parallax : MonoBehaviour
     [SerializeField]
     float distance;
     Transform cm;
+    [SerializeField]
+    float yHeight;
+
+    [SerializeField]
+    float xOffset;
+
 
     // Start is called before the first frame update
     void Start()
@@ -15,8 +21,12 @@ public class parallax : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        this.transform.position = (cm.position / distance);
+        Vector3 pos = cm.position;
+        pos.x += xOffset;
+        pos /= 4f;
+        pos.y = yHeight;
+        this.transform.position = pos;
     }
 }

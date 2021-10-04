@@ -5,20 +5,20 @@ using UnityEngine.UI;
 
 public class RageController : MonoBehaviour
 {
-    private const float chargeRate = 0.04f;
-    private const float drainRate = 0.2f;
+    private const float chargeRate = 0.833333333f;
+    private const float drainRate = 5f;
 
     private const int MinRage = 25;
-    private float _rage;
+    public float _rage;
     private float rage {
         get { return _rage; }
         set {
             _rage = value;
-            bar.sizeDelta = new Vector2(200 * (_rage/max), 20);
-            icon.sprite = _rage > 75 || _isRaging ? sprite3 :
-                _rage > 50 ? sprite2 :
-                _rage > 25 ? sprite1 :
-                null;
+            // bar.sizeDelta = new Vector2(200 * (_rage/max), 20);
+            // icon.sprite = _rage > 75 || _isRaging ? sprite3 :
+            //     _rage > 50 ? sprite2 :
+            //     _rage > 25 ? sprite1 :
+            //     null;
         }
     }
 
@@ -31,19 +31,22 @@ public class RageController : MonoBehaviour
     public Sprite sprite3;
     
 
-    public RectTransform bar;
+    // public RectTransform bar;
 
     // Raging can only be started by this class
-    private bool _isRaging;
+    public bool _isRaging;
     public void StartRage() {
+        rage = max;
         if (rage > MinRage) {
             _isRaging = true;
         }
+        GameManager.Instance.lm.rageVignette.color = new Color(1, 1, 1, .2f);
     }
     // Start is called before the first frame update
     void Start()
     {
         rage = startRage;
+        GameManager.Instance.lm.rageVignette.color = new Color(1, 1, 1, 0);
     }
 
     // Update is called once per frame
@@ -52,14 +55,16 @@ public class RageController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R)) StartRage();
 
         if (!_isRaging) {
-            rage += chargeRate;
-            if (rage > max) rage = max;
+            GameManager.Instance.lm.rageVignette.color = new Color(1, 1, 1, 0);
+            if (rage >= max) return;
+            rage += chargeRate * Time.deltaTime;
         } else {
-            rage -= drainRate;
+            rage -= drainRate * Time.deltaTime;
             if (rage < 0) {
                 rage = 0;
                 _isRaging = false;
-            } 
+                GameManager.Instance.lm.rageVignette.color = new Color(1, 1, 1, 0);
+            }
         }
     }
 }
