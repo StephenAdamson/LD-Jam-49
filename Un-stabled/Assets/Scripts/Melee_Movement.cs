@@ -114,11 +114,6 @@ public class Melee_Movement : MonoBehaviour
                 beegSmack = true;
             }
         }
-        else
-        {
-            // Middle Range
-            //horizontalMove = 0;
-        }
     }
 
     // FixedUpdate is called once per tick
