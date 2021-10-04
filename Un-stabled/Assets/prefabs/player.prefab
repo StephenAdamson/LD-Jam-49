@@ -222,6 +222,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e24e209d19ce65f55b674af80c8f9b96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectiles: []
+  guns: []
   hand: {fileID: 9147753457160166204}
   melee: {fileID: 0}
   projectile: {fileID: 6090094150259133666, guid: 1e3195785c3b9cb0b8870b981462050b, type: 3}
@@ -443,8 +445,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
-  startHealth: 6
-  startMax: 6
+  startHealth: 10
+  startMax: 10
 --- !u!95 &72608483
 Animator:
   serializedVersion: 3

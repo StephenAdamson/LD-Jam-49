@@ -1018,6 +1018,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UpgradePointsText
       objectReference: {fileID: 0}
+    - target: {fileID: 3111953111613785079, guid: 07c281ee0bc81364585738b1c3e953b7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07c281ee0bc81364585738b1c3e953b7, type: 3}
 --- !u!1 &494139211
@@ -2840,7 +2844,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7767221, y: 1}
+    m_SensorSize: {x: 1.6097561, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
