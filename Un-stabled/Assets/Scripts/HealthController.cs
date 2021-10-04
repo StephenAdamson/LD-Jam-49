@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HealthController : MonoBehaviour
 {
+    private float deathTimer = 0.0f;
+    private bool dead = false;
     private float _current;
     private float current{
         get { return _current; }
@@ -37,12 +40,25 @@ public class HealthController : MonoBehaviour
     {
         // if(Input.GetKeyDown(KeyCode.RightArrow)) heal(1);
         // if(Input.GetKeyDown(KeyCode.LeftArrow)) takeDamage(1);
+        if(dead){
+            deathTimer += Time.deltaTime;
+            if (deathTimer > 5.0f){ 
+                SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+            }   
+
+        }
     }
 
-    public float takeDamage(float damage) {
+    public float takeDamage(float damage)
+    {
         if (current < damage) current = 0;
         else current -= damage;
-        if(gameObject.layer == 7 && !isAlive()){
+        if (current == 0)
+        {
+            isDead();
+        }
+        if (gameObject.layer == 7 && !isAlive())
+        {
             Destroy(this.gameObject);
         }
         return current;
@@ -65,9 +81,24 @@ public class HealthController : MonoBehaviour
 
     public bool isAlive() {
         return current > 0;
+        
+    }
+    public void isDead() {
+        dead = true;
     }
 
     public float currentHealth() {
         return current;
+    }
+
+    void OnGUI()
+    {   
+        if(dead){
+            GUIStyle headStyle = new GUIStyle();
+            headStyle.fontSize = 50; 
+            // headStyle.
+            GUI.Label(new Rect(Screen.width / 2 -200, Screen.height / 2, 100, 50), "You Died", headStyle);
+            GUI.Label(new Rect(Screen.width / 2 -500, Screen.height / 2 + 200, 100, 50), "Upgrade on the main menu!", headStyle);
+        }
     }
 }
