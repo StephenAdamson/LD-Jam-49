@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour {
         {
             Destroy(this.gameObject);
         } else {
-            DontDestroyOnLoad(this.gameObject);
+            //DontDestroyOnLoad(this.gameObject);
             _instance = this;
             _upgrades = this.gameObject.AddComponent<UpgradeManager>();
             _projMath = this.gameObject.AddComponent<projectileHelper>();
