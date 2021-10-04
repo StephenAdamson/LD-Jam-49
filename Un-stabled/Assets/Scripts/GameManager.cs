@@ -36,7 +36,11 @@ public class GameManager : MonoBehaviour {
 
     
     void Start(){
-        lm = GameObject.FindGameObjectsWithTag("LevelManager")[0].GetComponent<LevelManager>();
+
+    }
+
+    public void setLevelManager(LevelManager lm){
+        this.lm = lm;
     }
 
     public GameObject getPlayer(){
