@@ -12,16 +12,22 @@ public class GunCircleRotate : MonoBehaviour
     [SerializeField]
     Transform bulletFirePoint;
 
+    [SerializeField]
+    int bulletCount = 1;
+
+    [SerializeField]
+    float spread = 3f;
+
     CharacterController2D owner;
 
     // Start is called before the first frame update
     void Start()
     {
         try{
-            owner = transform.parent.parent.GetComponent<CharacterController2D>();
+            owner = transform.parent.parent.parent.GetComponent<CharacterController2D>();
         }catch{
             try{
-                owner = transform.parent.GetComponent<CharacterController2D>();
+                owner = transform.parent.parent.GetComponent<CharacterController2D>();
             }catch{
                 Debug.Log("Weapon likely attached to invalid shooter");
             }
@@ -32,11 +38,14 @@ public class GunCircleRotate : MonoBehaviour
     void Update()
     {
         float angle = angleFinder(transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
-        
+
         transform.rotation = Quaternion.Euler(0, 0, angle);
-        if(owner.m_FacingRight){
+        if (owner.m_FacingRight)
+        {
             transform.localScale = new Vector3(1, 1, 1);
-        }else{
+        }
+        else
+        {
             transform.localScale = new Vector3(-1, -1, 1);
         }
 
@@ -44,14 +53,17 @@ public class GunCircleRotate : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            GameObject bullet = Instantiate(bulletObject);
-            bullet.GetComponent<ProjectileBehavior>().isPlayer = owner.gameObject.layer == 6;
-            //Black magic
-            Vector3 direction = (Vector2)(Quaternion.Euler(0, 0, angle) * Vector2.right);
-            //EOBlack magic
-            bullet.transform.position = bulletFirePoint.position;
-            bullet.GetComponent<Rigidbody2D>().AddForce(direction * bulletStronk);
-            bullet.transform.rotation = Quaternion.Euler(0, 0, angle);
+            for (int i = 0; i < bulletCount; i++)
+            {
+                GameObject bullet = Instantiate(bulletObject);
+                bullet.GetComponent<ProjectileBehavior>().isPlayer = owner.gameObject.layer == 6;
+                //Black magic
+                Vector3 direction = (Vector2)(Quaternion.Euler(0, 0, (angle + Random.Range(-spread, spread))) * Vector2.right);
+                //EOBlack magic
+                bullet.transform.position = bulletFirePoint.position;
+                bullet.GetComponent<Rigidbody2D>().AddForce(direction * (bulletCount > 3 ? bulletStronk * Random.Range(.9f, 1.1f) : bulletStronk));
+                bullet.transform.rotation = Quaternion.Euler(0, 0, angle);
+            }
         }
     }
 

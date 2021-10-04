@@ -24,7 +24,6 @@ public class HealthBar : MonoBehaviour
     }
 
     public void UpdateHealth(float current) {
-
         fullApples.sizeDelta = new Vector2(20*(((Mathf.CeilToInt(current))/2)), 20);
         halfApples.sizeDelta = new Vector2(20*(((Mathf.CeilToInt(current)+1)/2)), 20);
     }
