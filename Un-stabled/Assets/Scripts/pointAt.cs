@@ -11,14 +11,20 @@ public class pointAt : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
-    {
-        float angle = angleFinder(transform.position, target.position);
-        transform.rotation = Quaternion.Euler(0, 0, angle+90);
+    {   if (target)
+        {
+            float angle = angleFinder(transform.position, target.position);
+            transform.rotation = Quaternion.Euler(0, 0, angle + 90);
+        }else
+        {
+            float angle = angleFinder(transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            transform.rotation = Quaternion.Euler(0, 0, angle + 90);
+        }
     }
 
     private float angleFinder(Vector3 entity, Vector3 aim) 

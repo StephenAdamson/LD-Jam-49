@@ -39,15 +39,19 @@ public class HealthController : MonoBehaviour
         // if(Input.GetKeyDown(KeyCode.LeftArrow)) takeDamage(1);
     }
 
-    public void takeDamage(float damage) {
+    public float takeDamage(float damage) {
         if (current < damage) current = 0;
         else current -= damage;
+        if(gameObject.layer == 7 && !isAlive()){
+            Destroy(this.gameObject);
+        }
+        return current;
     }
 
-    public void takeDamage(float damage, Vector2 knockback) {
-        if (current < damage) current = 0;
-        else current -= damage;
+    public float takeDamage(float damage, Vector2 knockback) {
+        takeDamage(damage);
         GetComponent<Rigidbody2D>().AddForce(knockback);
+        return current;
     }
 
     public void heal(float healing) {

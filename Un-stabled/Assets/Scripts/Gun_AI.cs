@@ -8,7 +8,7 @@ public class Gun_AI : MonoBehaviour
     Vector3 aimLocation;    // This is the aim location. 
     [SerializeField]
     Rigidbody2D bulletObject;
-    [SerializeField] private Collider2D target;
+    [SerializeField] public Collider2D target;
     // Bullet force
     public int bulletStronk = 1000;
     [SerializeField]
@@ -26,6 +26,7 @@ public class Gun_AI : MonoBehaviour
     {
         owner = transform.parent.GetComponent<CharacterController2D>();
         initFrameCounterValue = frameCounter;
+        target = GameManager.Instance.getPlayer().GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
