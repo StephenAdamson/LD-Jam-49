@@ -47,9 +47,8 @@ public class HealthController : MonoBehaviour
         if(dead){
             deathTimer += Time.deltaTime;
             if (deathTimer > 5.0f){ 
-                SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+                SceneManager.LoadScene("MainMenu");
             }   
-
         }
     }
 

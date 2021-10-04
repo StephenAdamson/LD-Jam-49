@@ -19,7 +19,10 @@ public class GameManager : MonoBehaviour {
     public LevelManager lm;
 
     [Range(0f,1f)]
-    public float Difficulty = 0.5f;
+    public float Difficulty = 0.1f;
+
+    public int level = 1;
+    public int health = 6;
 
     private void Awake()
     {
@@ -27,7 +30,7 @@ public class GameManager : MonoBehaviour {
         {
             Destroy(this.gameObject);
         } else {
-            //DontDestroyOnLoad(this.gameObject);
+            DontDestroyOnLoad(this.gameObject);
             _instance = this;
             _upgrades = this.gameObject.AddComponent<UpgradeManager>();
             _projMath = this.gameObject.AddComponent<projectileHelper>();

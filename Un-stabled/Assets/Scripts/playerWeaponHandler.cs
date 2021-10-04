@@ -5,6 +5,9 @@ using UnityEngine;
 public class playerWeaponHandler : MonoBehaviour
 {
 
+    public GameObject[] projectiles;
+    public GameObject[] guns;
+
     public GameObject hand;
     public GameObject melee;
     public GameObject projectile;
@@ -15,6 +18,7 @@ public class playerWeaponHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+    setWeapon:
         if (hand)
         {
             if (gun)
@@ -32,6 +36,20 @@ public class playerWeaponHandler : MonoBehaviour
             else if (melee)
             {
 
+            }
+            else
+            {
+                int level = GameManager.Instance.level;
+                if(level <= projectiles.Length){
+                    projectile = projectiles[GameManager.Instance.level - 1];
+                    goto setWeapon;
+                }
+                level -= projectiles.Length;
+                if(level <= guns.Length){
+                    gun = guns[GameManager.Instance.level - 1];
+                    goto setWeapon;
+                }
+                gun = guns[guns.Length - 1];
             }
         }
     }
