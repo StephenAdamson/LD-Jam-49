@@ -10,7 +10,7 @@ public class Melee_Movement : MonoBehaviour
     private float horizontalMove = 0f;
     private bool jump;
     [SerializeField]
-    private Transform target;
+    public Transform target;
     [SerializeField]
     private float targetRange;
 
@@ -34,6 +34,7 @@ public class Melee_Movement : MonoBehaviour
             weapon.setOwner(gameObject);
         }
         anim = GetComponent<Animator>();
+        target = GameManager.Instance.getPlayer().transform;
     }
 
     // Update is called once per frame
@@ -108,7 +109,7 @@ public class Melee_Movement : MonoBehaviour
                                 }
                             }
                     outlookreturnthing:
-                    Debug.Log("");
+                    Debug.Log("yes i know this code is awful but we're on a time crunch");
                 }
                 beegSmack = true;
             }
