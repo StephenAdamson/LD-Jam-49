@@ -65,8 +65,23 @@ public class HealthController : MonoBehaviour
     }
 
     public float takeDamage(float damage, Vector2 knockback) {
-        takeDamage(damage);
-        GetComponent<Rigidbody2D>().AddForce(knockback);
+        RageController rc;
+        try{
+            rc = GetComponent<RageController>();
+        }catch{
+            rc = null;
+        }
+        if(rc != null){
+            if(!rc._isRaging){
+                takeDamage(damage);
+                GetComponent<Rigidbody2D>().AddForce(knockback);
+            }else{
+                rc._rage -= (damage*5f);
+            }
+        }else{
+            takeDamage(damage);
+            GetComponent<Rigidbody2D>().AddForce(knockback);
+        }
         return current;
     }
 

@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour {
 
     public GameObject prefab;
 
-    private LevelManager lm;
+    public LevelManager lm;
 
     [Range(0f,1f)]
     public float Difficulty = 0.5f;
