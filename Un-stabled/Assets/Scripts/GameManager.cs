@@ -16,6 +16,11 @@ public class GameManager : MonoBehaviour {
 
     public GameObject prefab;
 
+    private LevelManager lm;
+
+    [Range(0f,1f)]
+    public float Difficulty = 0.5f;
+
     private void Awake()
     {
         if (_instance != null && _instance != this)
@@ -29,6 +34,19 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    
+    void Start(){
+
+    }
+
+    public void setLevelManager(LevelManager lm){
+        this.lm = lm;
+    }
+
+    public GameObject getPlayer(){
+        return lm.ActivePlayer;
+    }
+
     public void StartGame() {
         SceneManager.LoadScene("test1");
     }
@@ -37,4 +55,7 @@ public class GameManager : MonoBehaviour {
         Application.Quit(0);
     }
 
+    public bool difficultyRoll(){
+        return Random.Range(0f,1f) < Difficulty;
+    }
 }

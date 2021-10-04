@@ -10,7 +10,7 @@ public class Melee_Movement : MonoBehaviour
     private float horizontalMove = 0f;
     private bool jump;
     [SerializeField]
-    private Transform target;
+    public Transform target;
     [SerializeField]
     private float targetRange;
 
@@ -21,21 +21,31 @@ public class Melee_Movement : MonoBehaviour
 
     public bool beegSmack = false;
 
+    public float cooldown = 1f;
+    private float cooldownCounter = 0f;
+
+    Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
         controller = GetComponent<CharacterController2D>();
-        weapon.setOwner(gameObject);
+        if(weapon){
+            weapon.setOwner(gameObject);
+        }
+        anim = GetComponent<Animator>();
+        target = GameManager.Instance.getPlayer().transform;
     }
 
     // Update is called once per frame
     void Update()
     {
+        cooldownCounter += Time.deltaTime;
         float dist = distanceCalc(transform.position, target.position);
         float angleToTarget = angleFinder(transform.position, target.position);
 
 
-        if(angleToTarget > 10)
+        if (angleToTarget > 10)
         {
             //Debug.Log("JUMP");
             jump = true;
@@ -52,7 +62,7 @@ public class Melee_Movement : MonoBehaviour
             float targetDirection = transform.position.x - target.position.x;
             targetDirection = targetDirection > 0 ? -1 : 1;
             horizontalMove = targetDirection * runSpeed;
-            
+
         }
         else if (dist < 2.5)
         {
@@ -63,14 +73,46 @@ public class Melee_Movement : MonoBehaviour
             }
             else
             {
-                weapon.whack();
+                if (weapon)
+                {
+                    weapon.whack();
+                }
+                else
+                {
+                    if(cooldownCounter > cooldown)
+                        
+                            for (float o = -1f; o <= 1f; o += 1f)
+                            {
+                                Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position + (transform.right / 2 * (controller.m_FacingRight ? 1 : -1)) + new Vector3(0, (0.333f) * o, 0), .5f);
+                                for (int i = 0; i < colliders.Length; i++)
+                                {
+                                    if (colliders[i].gameObject != gameObject)
+                                    {
+                                        try
+                                        {
+                                            HealthController eh = colliders[i].gameObject.GetComponent<HealthController>();
+                                            if (eh)
+                                            {
+                                                Vector2 dir = (eh.gameObject.transform.position + (Vector3.up / 4)) - (transform.position - (Vector3.up / 4));
+                                                dir = dir.normalized * 500;
+                                                eh.takeDamage(.5f, dir);
+                                                anim.SetTrigger("attack");
+                                                cooldownCounter = 0;
+                                                goto outlookreturnthing;
+                                            }
+                                        }
+                                        catch
+                                        {
+
+                                        }
+                                    }
+                                }
+                            }
+                    outlookreturnthing:
+                    Debug.Log("yes i know this code is awful but we're on a time crunch");
+                }
                 beegSmack = true;
             }
-        }
-        else
-        {
-            // Middle Range
-            //horizontalMove = 0;
         }
     }
 
@@ -78,6 +120,12 @@ public class Melee_Movement : MonoBehaviour
     void FixedUpdate()
     {
         controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
+        try
+        {
+            anim.SetBool("walking", Mathf.Abs(horizontalMove) > 0.01f);
+        }catch{
+            
+        }
     }
 
 

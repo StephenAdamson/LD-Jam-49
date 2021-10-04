@@ -44,6 +44,7 @@ public class windowEnemyBehaviour : MonoBehaviour
         elapsedTime = 0;
         shootTime = (float)(outTime-0.01f)/(float)shotCount;
         sprites = this.GetComponentsInChildren<SpriteRenderer>();
+        target = GameManager.Instance.getPlayer().transform;
     }
 
     // Update is called once per frame

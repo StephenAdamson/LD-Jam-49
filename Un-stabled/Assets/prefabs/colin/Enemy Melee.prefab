@@ -21,7 +21,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5836557565138157791
 Transform:
   m_ObjectHideFlags: 0
@@ -204,6 +204,7 @@ MonoBehaviour:
   weapon: {fileID: 2896626188569873478}
   angle: 45
   beegSmack: 0
+  counter: 0
 --- !u!1 &5836557565359966814
 GameObject:
   m_ObjectHideFlags: 0

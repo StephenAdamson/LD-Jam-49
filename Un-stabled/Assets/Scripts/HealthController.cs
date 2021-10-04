@@ -49,12 +49,25 @@ public class HealthController : MonoBehaviour
         }
     }
 
-    public void takeDamage(float damage) {
+    public float takeDamage(float damage)
+    {
         if (current < damage) current = 0;
         else current -= damage;
-        if (current == 0) {
+        if (current == 0)
+        {
             isDead();
-            }
+        }
+        if (gameObject.layer == 7 && !isAlive())
+        {
+            Destroy(this.gameObject);
+        }
+        return current;
+    }
+
+    public float takeDamage(float damage, Vector2 knockback) {
+        takeDamage(damage);
+        GetComponent<Rigidbody2D>().AddForce(knockback);
+        return current;
     }
 
     public void heal(float healing) {
@@ -72,7 +85,6 @@ public class HealthController : MonoBehaviour
     }
     public void isDead() {
         dead = true;
-        
     }
 
     public float currentHealth() {
@@ -84,7 +96,7 @@ public class HealthController : MonoBehaviour
         if(dead){
             GUIStyle headStyle = new GUIStyle();
             headStyle.fontSize = 50; 
-            headStyle.
+            // headStyle.
             GUI.Label(new Rect(Screen.width / 2 -200, Screen.height / 2, 100, 50), "You Died", headStyle);
             GUI.Label(new Rect(Screen.width / 2 -500, Screen.height / 2 + 200, 100, 50), "Upgrade on the main menu!", headStyle);
         }

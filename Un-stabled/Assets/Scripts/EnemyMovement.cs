@@ -21,6 +21,7 @@ public class EnemyMovement : MonoBehaviour
     {
         controller = GetComponent<CharacterController2D>();
         animator = GetComponent<Animator>();
+        target = GameManager.Instance.getPlayer().transform;
     }
 
     // Update is called once per frame

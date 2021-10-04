@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileBehavior : MonoBehaviour
+public class MeleeDamageBehaviour : MonoBehaviour
 {
-    [SerializeField]
-    float damage = 1f;
+    int damage = 1;
     GameObject owner;
     [SerializeField]
     bool destroyOnContact = false;
@@ -14,45 +13,53 @@ public class ProjectileBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per framehealthBar
     void Update()
     {
-        
+
     }
 
-    public void setOwner(GameObject owner){
+    public void setOwner(GameObject owner)
+    {
         this.owner = owner;
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.gameObject.layer == 8)
-            return;
-        try{
-            if(isPlayer && col.gameObject.layer == 6){
+        try
+        {
+            if (isPlayer && col.gameObject.layer == 6)
+            {
                 return;
             }
-            if(!isPlayer && col.gameObject.layer == 7){
+            if (!isPlayer && col.gameObject.layer == 7)
+            {
                 return;
             }
 
-            if(!isPlayer && col.gameObject.layer == 6){
+            if (!isPlayer && col.gameObject.layer == 6)
+            {
                 col.gameObject.GetComponent<HealthController>().takeDamage(damage);
-                Destroy(this.gameObject);
-            }else if(isPlayer && col.gameObject.layer == 7){
+                //Destroy(this.gameObject);
+            }
+            else if (isPlayer && col.gameObject.layer == 7)
+            {
                 col.gameObject.GetComponent<HealthController>().takeDamage(damage);
-                Destroy(this.gameObject);
-            }else
+                //Destroy(this.gameObject);
+            }
+            else
             {
                 if (destroyOnContact)
                 {
                     Destroy(this.gameObject);
                 }
             }
-        }catch{
+        }
+        catch
+        {
 
         }
     }
