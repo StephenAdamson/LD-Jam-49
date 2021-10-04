@@ -67,5 +67,5 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
-*.unity
+# *.unity
 Un-stabled/.vscode/launch.json

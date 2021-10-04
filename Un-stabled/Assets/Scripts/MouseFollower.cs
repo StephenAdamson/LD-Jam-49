@@ -36,7 +36,7 @@ public class MouseFollower : MonoBehaviour
         //EODebug
 
         // Set sprite location
-        transform.position = point;
+        transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         
     }
 
