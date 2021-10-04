@@ -44,3 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 550246438852314586, guid: 8114583a96840ec4f98a039dfae9d5ae, type: 3}
+  lm: {fileID: 0}
+  Difficulty: 0.5
+  level: 1
+  health: 6
