@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: -864545691893146193}
   - component: {fileID: 650723173}
   m_Layer: 7
-  m_Name: Enemy (Melee)
+  m_Name: Enemy (Walker)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -145,6 +145,9 @@ MonoBehaviour:
   m_GroundCheck: {fileID: 1380770305515847171}
   m_CeilingCheck: {fileID: 1380770303591879350}
   m_CrouchDisableCollider: {fileID: 1380770304831681668}
+  m_MaxGroundGrace: 0.2
+  m_Grounded: 0
+  m_groundGrace: 0
   m_FacingRight: 1
   OnLandEvent:
     m_PersistentCalls:
@@ -228,7 +231,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runSpeed: 5
-  target: {fileID: 4244776660467036818, guid: bbbdab893aa3c3d9a9f568981d2971eb, type: 3}
+  target: {fileID: 0}
+  targetRange: 0
 --- !u!114 &-864545691893146193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -318,7 +322,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3684364262909034231}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.1, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1380770304831681667}
@@ -364,7 +368,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: b0b081050e8a609409c019356fbad25f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

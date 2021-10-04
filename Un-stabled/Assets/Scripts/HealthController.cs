@@ -44,6 +44,12 @@ public class HealthController : MonoBehaviour
         else current -= damage;
     }
 
+    public void takeDamage(float damage, Vector2 knockback) {
+        if (current < damage) current = 0;
+        else current -= damage;
+        GetComponent<Rigidbody2D>().AddForce(knockback);
+    }
+
     public void heal(float healing) {
         if (current + healing > max) current = max;
         else current += healing;

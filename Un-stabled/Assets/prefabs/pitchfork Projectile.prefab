@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -5696655903408191657}
   - component: {fileID: 288907138385738207}
   - component: {fileID: -7086678208269982566}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pitchfork Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}

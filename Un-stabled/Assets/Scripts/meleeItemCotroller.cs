@@ -9,6 +9,7 @@ public class meleeItemCotroller : MonoBehaviour
     public bool isPlayer = false;
 
     public float damage = 1;
+    public float knockback = 1;
 
 
 
@@ -42,10 +43,12 @@ public class meleeItemCotroller : MonoBehaviour
         }
 
         try{
+            Vector2 dir = (col.gameObject.transform.position + (Vector3.up/4)) - (transform.position - (Vector3.up/4));
+            dir = dir.normalized * knockback;
             if(!isPlayer && col.gameObject.layer == 6){
-                col.gameObject.GetComponent<HealthController>().takeDamage(damage);
+                col.gameObject.GetComponent<HealthController>().takeDamage(damage,dir);
             }else if(isPlayer && col.gameObject.layer == 7){
-                col.gameObject.GetComponent<HealthController>().takeDamage(damage);
+                col.gameObject.GetComponent<HealthController>().takeDamage(damage,dir);
             }
         }catch{
 

@@ -29,6 +29,8 @@ public class ProjectileBehavior : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
+        if(col.gameObject.layer == 8)
+            return;
         try{
             if(isPlayer && col.gameObject.layer == 6){
                 return;
