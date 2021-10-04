@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ProjectileBehavior : MonoBehaviour
 {
-
-    int damage = 1;
+    [SerializeField]
+    float damage = 1f;
     GameObject owner;
     [SerializeField]
     bool destroyOnContact = false;

@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class HealthController : MonoBehaviour
 {
-    private int _current;
-    private int current{
+    private float _current;
+    private float current{
         get { return _current; }
         set {
             if (healthBar != null) healthBar.UpdateHealth(value);
             _current = value;
         }
     }
-    private int _max;
-    private int max{
+    private float _max;
+    private float max{
         get { return _max; }
         set {
             if (healthBar != null) healthBar.UpdateMax(value);
@@ -22,8 +22,8 @@ public class HealthController : MonoBehaviour
     }
 
     public HealthBar healthBar;
-    public int startHealth;
-    public int startMax;
+    public float startHealth;
+    public float startMax;
 
     // Start is called before the first frame update
     void Start()
@@ -39,17 +39,17 @@ public class HealthController : MonoBehaviour
         // if(Input.GetKeyDown(KeyCode.LeftArrow)) takeDamage(1);
     }
 
-    public void takeDamage(int damage) {
+    public void takeDamage(float damage) {
         if (current < damage) current = 0;
         else current -= damage;
     }
 
-    public void heal(int healing) {
+    public void heal(float healing) {
         if (current + healing > max) current = max;
         else current += healing;
     }
 
-    public void setMax(int newMax) {
+    public void setMax(float newMax) {
         max = newMax;
     }
 
@@ -57,7 +57,7 @@ public class HealthController : MonoBehaviour
         return current > 0;
     }
 
-    public int currentHealth() {
+    public float currentHealth() {
         return current;
     }
 }

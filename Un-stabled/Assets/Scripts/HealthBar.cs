@@ -23,13 +23,13 @@ public class HealthBar : MonoBehaviour
 
     }
 
-    public void UpdateHealth(int current) {
+    public void UpdateHealth(float current) {
 
-        fullApples.sizeDelta = new Vector2(20*(((current)/2)), 20);
-        halfApples.sizeDelta = new Vector2(20*(((current+1)/2)), 20);
+        fullApples.sizeDelta = new Vector2(20*(((Mathf.CeilToInt(current))/2)), 20);
+        halfApples.sizeDelta = new Vector2(20*(((Mathf.CeilToInt(current)+1)/2)), 20);
     }
 
-    public void UpdateMax(int max) {
-        emptyApples.sizeDelta = new Vector2(20*(((max)/2)), 20);
+    public void UpdateMax(float max) {
+        emptyApples.sizeDelta = new Vector2(20*(((Mathf.CeilToInt(max))/2)), 20);
     }
 }

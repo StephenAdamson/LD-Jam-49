@@ -99,7 +99,7 @@ public class windowEnemyBehaviour : MonoBehaviour
                         }
                         Rigidbody2D wp = Instantiate(bulletProjectile);
                         wp.transform.position = transform.position - ((transform.position - target.position).normalized / 2);
-                        wp.AddForce(dir * 5000f);
+                        wp.AddForce(dir * 10000f);
                     }
                 }
             }
