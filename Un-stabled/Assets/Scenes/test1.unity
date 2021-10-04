@@ -7554,6 +7554,18 @@ PrefabInstance:
       propertyPath: m_PixelsPerUnitMultiplier
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 3243116140083042562, guid: 8407aa6acd03c2d44a0fca08eea044f3, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4414421727443673668, guid: 8407aa6acd03c2d44a0fca08eea044f3, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4414421727443673668, guid: 8407aa6acd03c2d44a0fca08eea044f3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5905339118539276723, guid: 8407aa6acd03c2d44a0fca08eea044f3, type: 3}
       propertyPath: m_Name
       value: HealthBar
@@ -7561,6 +7573,14 @@ PrefabInstance:
     - target: {fileID: 6068546668531792071, guid: 8407aa6acd03c2d44a0fca08eea044f3, type: 3}
       propertyPath: m_PixelsPerUnitMultiplier
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7158548789140500566, guid: 8407aa6acd03c2d44a0fca08eea044f3, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7158548789140500566, guid: 8407aa6acd03c2d44a0fca08eea044f3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7373037814941614409, guid: 8407aa6acd03c2d44a0fca08eea044f3, type: 3}
       propertyPath: m_Pivot.x
