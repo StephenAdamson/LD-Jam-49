@@ -193,7 +193,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5836557565138157791
 Transform:
   m_ObjectHideFlags: 0
@@ -285,6 +285,9 @@ MonoBehaviour:
   m_GroundCheck: {fileID: 5836557565359966815}
   m_CeilingCheck: {fileID: 5836557566071219946}
   m_CrouchDisableCollider: {fileID: 5836557565138157784}
+  m_MaxGroundGrace: 0.2
+  m_Grounded: 0
+  m_groundGrace: 0
   m_FacingRight: 1
   OnLandEvent:
     m_PersistentCalls:
@@ -373,6 +376,7 @@ MonoBehaviour:
   weapon: {fileID: 4888346681705606713}
   angle: 45
   beegSmack: 0
+  counter: 0
 --- !u!1 &5836557565359966814
 GameObject:
   m_ObjectHideFlags: 0
