@@ -15,9 +15,6 @@ public class Gun_AI : MonoBehaviour
     Transform bulletFirePoint;
 
     [SerializeField]
-    Transform gunPrefab;
-
-    [SerializeField]
     int frameCounter = 60;
 
     int initFrameCounterValue = 0;
