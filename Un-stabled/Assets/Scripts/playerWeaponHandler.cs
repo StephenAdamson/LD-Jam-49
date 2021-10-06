@@ -39,14 +39,12 @@ public class playerWeaponHandler : MonoBehaviour
             }
             else
             {
-                int level = GameManager.Instance.level;
-                if(level <= projectiles.Length){
+                if(GameManager.Instance.level <= projectiles.Length){
                     projectile = projectiles[GameManager.Instance.level - 1];
                     goto setWeapon;
                 }
-                level -= projectiles.Length;
-                if(level <= guns.Length){
-                    gun = guns[level - 1];
+                if(GameManager.Instance.level - projectiles.Length <= guns.Length){
+                    gun = guns[GameManager.Instance.level - 1];
                     goto setWeapon;
                 }
                 gun = guns[guns.Length - 1];
