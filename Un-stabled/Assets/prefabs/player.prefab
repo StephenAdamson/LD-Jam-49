@@ -222,11 +222,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e24e209d19ce65f55b674af80c8f9b96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectiles: []
-  guns: []
+  projectiles:
+  - {fileID: 6090094150259133666, guid: 1e3195785c3b9cb0b8870b981462050b, type: 3}
+  guns:
+  - {fileID: 8090313504969962379, guid: 94a0488f2df579fb2953d7230c8612c8, type: 3}
+  - {fileID: 9208453196491574056, guid: 0e0137e0787322232b295e6c93ad50fd, type: 3}
   hand: {fileID: 9147753457160166204}
   melee: {fileID: 0}
-  projectile: {fileID: 6090094150259133666, guid: 1e3195785c3b9cb0b8870b981462050b, type: 3}
+  projectile: {fileID: 0}
   gun: {fileID: 0}
 --- !u!1 &4244776660467036812
 GameObject:
