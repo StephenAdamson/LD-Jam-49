@@ -36,6 +36,10 @@ public class HealthController : MonoBehaviour
         if(gameObject.name == "player" || gameObject.name == "player(Clone)"){
             HealthBar hb = GameObject.FindObjectOfType<Canvas>().GetComponentInChildren<HealthBar>();
             healthBar = hb;
+            setMax(GameManager.Instance.health);
+            current = GameManager.Instance.health;
+            healthBar.UpdateHealth(current);
+            healthBar.UpdateMax(current);
         }
     }
 
