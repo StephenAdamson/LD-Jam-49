@@ -1209,7 +1209,7 @@ PrefabInstance:
       objectReference: {fileID: 550246438852314586, guid: 8114583a96840ec4f98a039dfae9d5ae, type: 3}
     - target: {fileID: 5578559890978775713, guid: 279b106e399096a4badb6d7679f733b6, type: 3}
       propertyPath: Difficulty
-      value: 0.2
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 279b106e399096a4badb6d7679f733b6, type: 3}
