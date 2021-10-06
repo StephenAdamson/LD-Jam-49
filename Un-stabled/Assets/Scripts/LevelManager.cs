@@ -25,6 +25,7 @@ public class LevelManager : MonoBehaviour
             ActivePlayer = Instantiate(playerPrefab);
             ActivePlayer.transform.position = GameObject.FindGameObjectsWithTag("Respawn")[0].transform.position;
             ActivePlayer.GetComponent<HealthController>().setMax(GameManager.Instance.health);
+            ActivePlayer.GetComponent<HealthController>().heal(1000);
         }
         Camera.main.gameObject.GetComponentInChildren<CinemachineVirtualCamera>().Follow = ActivePlayer.transform;
         rageVignette = Camera.main.gameObject.GetComponentsInChildren<SpriteRenderer>()[1];
