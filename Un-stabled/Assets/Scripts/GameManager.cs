@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour {
     public float Difficulty = 0.1f;
 
     public int level = 1;
-    public int health = 6;
+    public int health = 10;
 
     private void Awake()
     {

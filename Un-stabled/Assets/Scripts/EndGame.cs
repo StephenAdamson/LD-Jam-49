@@ -22,10 +22,10 @@ public class EndGame : MonoBehaviour
             endTimeCounter += Time.deltaTime;
         }
         if(endTimeCounter > endTime){
-            SceneManager.LoadScene("MainMenu");
             GameManager.Instance.Difficulty += .1f;
-            GameManager.Instance.level += Random.Range(0,1);
-            GameManager.Instance.health += Random.Range(0,1);
+            GameManager.Instance.health += Random.Range(0,3) != 1 ? 1 : 0;
+            GameManager.Instance.level += Random.Range(0,3) == 1 ? 1 : 0;
+            SceneManager.LoadScene("MainMenu");
         }
     }
 
