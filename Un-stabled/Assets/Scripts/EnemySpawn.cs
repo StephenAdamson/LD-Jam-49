@@ -24,7 +24,7 @@ public class EnemySpawn : MonoBehaviour
             {
                 if (GameManager.Instance.difficultyRoll())
                 {
-                    GameObject enemy = Instantiate(Enemies[(int)Mathf.Abs(RandomGaussian(-Enemies.Length + 1.4f, Enemies.Length - 0.6f))]);
+                    GameObject enemy = Instantiate(Enemies[(Mathf.Clamp((int)Mathf.Abs(RandomGaussian(-Enemies.Length + 1.4f, Enemies.Length - 3 + (GameManager.Instance.Difficulty*4))),0,Enemies.Length-1))]);
                     enemy.transform.position = transform.position;
                     try
                     {
