@@ -46,7 +46,7 @@ public class playerWeaponHandler : MonoBehaviour
                 }
                 level -= projectiles.Length;
                 if(level <= guns.Length){
-                    gun = guns[GameManager.Instance.level - 1];
+                    gun = guns[level - 1];
                     goto setWeapon;
                 }
                 gun = guns[guns.Length - 1];

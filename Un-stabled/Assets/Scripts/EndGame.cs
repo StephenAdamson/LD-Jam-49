@@ -24,7 +24,7 @@ public class EndGame : MonoBehaviour
         if(endTimeCounter > endTime){
             GameManager.Instance.Difficulty += .1f;
             GameManager.Instance.health += Random.Range(0,3) != 1 ? 1 : 0;
-            GameManager.Instance.level += Random.Range(0,3) == 1 ? 1 : 0;
+            GameManager.Instance.level += Random.Range(0,4) == 1 ? 1 : 0;
             SceneManager.LoadScene("MainMenu");
         }
     }
