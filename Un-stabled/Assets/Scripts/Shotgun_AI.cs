@@ -15,9 +15,6 @@ public class Shotgun_AI : MonoBehaviour
     Transform bulletFirePoint;
 
     [SerializeField]
-    Transform gunPrefab;
-
-    [SerializeField]
     int frameCounter = 60;
 
     [SerializeField]
@@ -64,7 +61,7 @@ public class Shotgun_AI : MonoBehaviour
                 //Black magic
                 Vector3 direction = (Vector2)(Quaternion.Euler(0, 0, angle+spray) * Vector2.right);
                 //EOBlack magic
-                bullet.AddForce(direction * bulletStronk);
+                bullet.AddForce(direction * bulletStronk * (Random.Range(.9f,1.2f)));
                 bullet.transform.position = bulletFirePoint.position;
                 bullet.transform.rotation = Quaternion.Euler(0, 0, angle+spray);
                 frameCounter = initFrameCounterValue;

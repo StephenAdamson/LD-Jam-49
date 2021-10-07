@@ -45,10 +45,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemies:
   - {fileID: 1233005779771165136, guid: d8d579ed38a1c7732b7bb6dc66abe230, type: 3}
+  - {fileID: 3551832411741356724, guid: 368adc8603c91787ca79fdde29c4fab2, type: 3}
   - {fileID: 3912461248721937501, guid: 8ba9a1326bf1012aca46faec97f8b2a8, type: 3}
+  - {fileID: 3137105687041492485, guid: f7a03f823e8fc5041b783dc73e57e922, type: 3}
   - {fileID: 3222846482755889848, guid: aa4851bbd7c1b9eb1b6844dff5963c70, type: 3}
+  - {fileID: 5648587233183260407, guid: ad99d88ebdd731eb08e28106cb6a6ea9, type: 3}
   - {fileID: 811608014070784142, guid: a0eef197878da9c5c90304e51e31b959, type: 3}
+  - {fileID: 4588114741985446893, guid: eb4d175d608c8eec281f82845c3c144b, type: 3}
   - {fileID: 6866876142700590432, guid: f22e5e9bb6660f85dbcae3e0fc05140c, type: 3}
+  - {fileID: 3505758186997675577, guid: 8ece8dbcab4213e2babe27fe6ee30884, type: 3}
   - {fileID: 7910473154587864393, guid: 3cc2b13c812fe6eac99fc1da496d7539, type: 3}
+  - {fileID: 3603044859459786610, guid: ac3cc0f140d2df08eb4c986248caf85e, type: 3}
   - {fileID: 4493944565460490779, guid: 82e40b049c2fd49fea5c33711628d129, type: 3}
+  - {fileID: 5389723147323498571, guid: f9bfb5b5bedeea8758214d741548bcfc, type: 3}
   SpawnRadius: 10

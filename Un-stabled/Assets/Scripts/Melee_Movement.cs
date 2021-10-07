@@ -79,35 +79,42 @@ public class Melee_Movement : MonoBehaviour
                 }
                 else
                 {
-                    if(cooldownCounter > cooldown)
-                        
-                            for (float o = -1f; o <= 1f; o += 1f)
-                            {
-                                Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position + (transform.right / 2 * (controller.m_FacingRight ? 1 : -1)) + new Vector3(0, (0.333f) * o, 0), .5f);
-                                for (int i = 0; i < colliders.Length; i++)
-                                {
-                                    if (colliders[i].gameObject != gameObject)
-                                    {
-                                        try
-                                        {
-                                            HealthController eh = colliders[i].gameObject.GetComponent<HealthController>();
-                                            if (eh)
-                                            {
-                                                Vector2 dir = (eh.gameObject.transform.position + (Vector3.up / 4)) - (transform.position - (Vector3.up / 4));
-                                                dir = dir.normalized * 500;
-                                                eh.takeDamage(.5f, dir);
-                                                anim.SetTrigger("attack");
-                                                cooldownCounter = 0;
-                                                goto outlookreturnthing;
-                                            }
-                                        }
-                                        catch
-                                        {
+                    if (cooldownCounter > cooldown)
 
+                        for (float o = -1f; o <= 1f; o += 1f)
+                        {
+                            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position + (transform.right / 2 * (controller.m_FacingRight ? 1 : -1)) + new Vector3(0, (0.333f) * o, 0), .5f);
+                            for (int i = 0; i < colliders.Length; i++)
+                            {
+                                if (colliders[i].gameObject != gameObject)
+                                {
+                                    try
+                                    {
+                                        HealthController eh = colliders[i].gameObject.GetComponent<HealthController>();
+                                        if (eh)
+                                        {
+                                            Vector2 dir = (eh.gameObject.transform.position + (Vector3.up / 4)) - (transform.position - (Vector3.up / 4));
+                                            dir = dir.normalized * 500;
+                                            eh.takeDamage(.5f, dir);
+                                            try
+                                            {
+                                                anim.SetTrigger("attack");
+                                            }
+                                            catch
+                                            {
+
+                                            }
+                                            cooldownCounter = 0;
+                                            goto outlookreturnthing;
                                         }
+                                    }
+                                    catch
+                                    {
+
                                     }
                                 }
                             }
+                        }
                     outlookreturnthing:
                     Debug.Log("yes i know this code is awful but we're on a time crunch");
                 }

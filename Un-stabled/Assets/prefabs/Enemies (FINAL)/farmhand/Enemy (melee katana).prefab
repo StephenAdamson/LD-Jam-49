@@ -33,6 +33,7 @@ MonoBehaviour:
   weapon: {fileID: 6090875689035814565}
   angle: 45
   beegSmack: 0
+  cooldown: 1
 --- !u!1001 &1253475143218216122
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43,6 +44,10 @@ PrefabInstance:
     - target: {fileID: 2555288791787627157, guid: a291420d4b0d18e808bdfd2eafc5bf7b, type: 3}
       propertyPath: m_Name
       value: Katana
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028467478042128984, guid: a291420d4b0d18e808bdfd2eafc5bf7b, type: 3}
+      propertyPath: m_FlipX
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7241478797720664634, guid: a291420d4b0d18e808bdfd2eafc5bf7b, type: 3}
       propertyPath: m_RootOrder
@@ -102,6 +107,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -864545691893146193, guid: 42d627e666e2c05869481591cd25bbbf, type: 3}
+      propertyPath: enemyHealthBarPrefab
+      value: 
+      objectReference: {fileID: 7933084248258196629, guid: 9238de001ba6867e3bd5e5c244dfcffb, type: 3}
     - target: {fileID: 1380770304831681667, guid: 42d627e666e2c05869481591cd25bbbf, type: 3}
       propertyPath: m_RootOrder
       value: 0

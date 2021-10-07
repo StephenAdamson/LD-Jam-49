@@ -246,7 +246,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53b9c3c68a6890641893e613b3f33214, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}
+  playerHealthBar: {fileID: 0}
+  enemyHealthBarPrefab: {fileID: 7933084248258196629, guid: 9238de001ba6867e3bd5e5c244dfcffb, type: 3}
   startHealth: 1
   startMax: 1
 --- !u!95 &650723173
