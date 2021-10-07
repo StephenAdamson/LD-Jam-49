@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ced2af9941c1c6287eab589ca16969, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 667510595, guid: c32c2f6d2d962bf9a93fde1d43e8f10e, type: 3}
+  projectile: {fileID: 8579444787108550813, guid: 911dc4af9fbe4f8dca9b8807dd66947b, type: 3}
   emitter: {fileID: 4368339131053127867}
 --- !u!1 &7294741546379198247
 GameObject:
@@ -23,7 +23,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4368339131053127867}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ThrowPoint
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
@@ -51,6 +51,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -864545691893146193, guid: 42d627e666e2c05869481591cd25bbbf, type: 3}
+      propertyPath: enemyHealthBarPrefab
+      value: 
+      objectReference: {fileID: 7933084248258196629, guid: 9238de001ba6867e3bd5e5c244dfcffb, type: 3}
     - target: {fileID: 1380770304831681667, guid: 42d627e666e2c05869481591cd25bbbf, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -98,6 +102,14 @@ PrefabInstance:
     - target: {fileID: 1380770304831681672, guid: 42d627e666e2c05869481591cd25bbbf, type: 3}
       propertyPath: m_Name
       value: Enemy (Throw HorseShoe)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380770304831681672, guid: 42d627e666e2c05869481591cd25bbbf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3684364262909034231, guid: 42d627e666e2c05869481591cd25bbbf, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42d627e666e2c05869481591cd25bbbf, type: 3}

@@ -59,6 +59,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (melee hand)
       objectReference: {fileID: 0}
+    - target: {fileID: 5864291197508799866, guid: 8ba9a1326bf1012aca46faec97f8b2a8, type: 3}
+      propertyPath: enemyHealthBarPrefab
+      value: 
+      objectReference: {fileID: 7933084248258196629, guid: 9238de001ba6867e3bd5e5c244dfcffb, type: 3}
     - target: {fileID: 6101684286946250466, guid: 8ba9a1326bf1012aca46faec97f8b2a8, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -66,6 +70,10 @@ PrefabInstance:
     - target: {fileID: 7796947263821799687, guid: 8ba9a1326bf1012aca46faec97f8b2a8, type: 3}
       propertyPath: weapon
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7796947263821799687, guid: 8ba9a1326bf1012aca46faec97f8b2a8, type: 3}
+      propertyPath: targetRange
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ba9a1326bf1012aca46faec97f8b2a8, type: 3}

@@ -45,6 +45,10 @@ PrefabInstance:
       propertyPath: projectile
       value: 
       objectReference: {fileID: -5696655903408191657, guid: 4167f5113a4b57628b60b266116b377a, type: 3}
+    - target: {fileID: -864545691893146193, guid: 42d627e666e2c05869481591cd25bbbf, type: 3}
+      propertyPath: enemyHealthBarPrefab
+      value: 
+      objectReference: {fileID: 7933084248258196629, guid: 9238de001ba6867e3bd5e5c244dfcffb, type: 3}
     - target: {fileID: 1380770304831681667, guid: 42d627e666e2c05869481591cd25bbbf, type: 3}
       propertyPath: m_RootOrder
       value: 0
