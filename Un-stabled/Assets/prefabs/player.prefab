@@ -224,6 +224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectiles:
   - {fileID: 6090094150259133666, guid: 1e3195785c3b9cb0b8870b981462050b, type: 3}
+  - {fileID: 8318712525457099587, guid: 0650523fe01ab3849961a234fc18b02c, type: 3}
   guns:
   - {fileID: 8090313504969962379, guid: 94a0488f2df579fb2953d7230c8612c8, type: 3}
   - {fileID: 9208453196491574056, guid: 0e0137e0787322232b295e6c93ad50fd, type: 3}

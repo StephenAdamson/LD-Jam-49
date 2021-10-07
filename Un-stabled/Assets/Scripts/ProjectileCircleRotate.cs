@@ -40,6 +40,7 @@ public class ProjectileCircleRotate : MonoBehaviour
             {
                 try
                 {
+                    Debug.Log(transform.parent.parent.gameObject.name);
                     owner = transform.parent.parent.GetComponent<CharacterController2D>();
                 }
                 catch
@@ -54,7 +55,6 @@ public class ProjectileCircleRotate : MonoBehaviour
     {
         if(!owner){
             getOwner();
-            Debug.Log("Fail");
             return;
         }
         float angle = angleFinder(transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));

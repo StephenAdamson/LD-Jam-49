@@ -46,9 +46,7 @@ public class HealthController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if(Input.GetKeyDown(KeyCode.RightArrow)) heal(1);
-        // if(Input.GetKeyDown(KeyCode.LeftArrow)) takeDamage(1);
-        if(dead){
+        if(dead && gameObject.layer == 6){
             deathTimer += Time.deltaTime;
             if (deathTimer > 5.0f){ 
                 SceneManager.LoadScene("MainMenu");
@@ -60,7 +58,7 @@ public class HealthController : MonoBehaviour
     {
         if (current < damage) current = 0;
         else current -= damage;
-        if (current == 0)
+        if (current <= 0.5f)
         {
             isDead();
         }
@@ -115,7 +113,7 @@ public class HealthController : MonoBehaviour
 
     void OnGUI()
     {   
-        if(dead){
+        if(dead && gameObject.layer == 6){
             GUIStyle headStyle = new GUIStyle();
             headStyle.fontSize = 50; 
             // headStyle.
