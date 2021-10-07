@@ -39,12 +39,6 @@ public class playerStateHandler : MonoBehaviour
             blood.transform.position = transform.position;
             blood.Play();
         }
-        if(health.currentHealth() < lastHealth){
-            ParticleSystem blood = Instantiate(bloodPrefab);
-            blood.transform.rotation = Quaternion.Euler(-90, 0, 0);
-            blood.transform.position = transform.position;
-            blood.Play();
-        }
         lastHealth = health.currentHealth();
     }
 }

@@ -36,6 +36,9 @@ public class HealthController : MonoBehaviour
     public float startHealth;
     public float startMax;
 
+    public ParticleSystem bloodPrefab;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -84,6 +87,10 @@ public class HealthController : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        ParticleSystem blood = Instantiate(bloodPrefab);
+        blood.transform.rotation = Quaternion.Euler(-90, 0, 0);
+        blood.transform.position = transform.position;
+        blood.Play();
         return current;
     }
 
