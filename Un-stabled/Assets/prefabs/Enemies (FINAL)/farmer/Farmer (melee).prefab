@@ -325,6 +325,7 @@ MonoBehaviour:
   enemyHealthBarPrefab: {fileID: 7933084248258196629, guid: 9238de001ba6867e3bd5e5c244dfcffb, type: 3}
   startHealth: 1.5
   startMax: 1.5
+  bloodPrefab: {fileID: 1086576080902915498, guid: 4a00be842e6be6def9a4c316f64459a0, type: 3}
 --- !u!1 &3941335511363881188
 GameObject:
   m_ObjectHideFlags: 0
