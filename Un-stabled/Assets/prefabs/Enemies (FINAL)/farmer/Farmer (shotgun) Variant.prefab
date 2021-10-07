@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29833f1478ea487499e8e102c4e20816, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletObject: {fileID: -976528839755074452, guid: 74159d586a847bd4993b44b1287f0942, type: 3}
+  bulletObject: {fileID: 5723290786979145890, guid: 083511abd2f75a64da7c7a0027c4c174, type: 3}
   target: {fileID: 0}
   bulletStronk: 1000
   bulletFirePoint: {fileID: 3609943653121223872}
