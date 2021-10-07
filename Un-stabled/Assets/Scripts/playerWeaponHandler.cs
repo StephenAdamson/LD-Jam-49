@@ -52,9 +52,7 @@ public class playerWeaponHandler : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void dropWeapon(){
+        Destroy(hand);
     }
 }
